@@ -1,0 +1,521 @@
+:root {/*создали псевдокласс*/
+    --black: #2b2a2c;/*создали переменную для черного цвета, определив его 16ный код на макете сайта с помощью пипетки фотошопа*/
+    --gray: #6a696b; 
+    --gray-light: #dddddd;
+    --white: #ffffff;
+}
+body {/*задаем стили для тега body*/
+    margin: 0;/*отступы 0*/
+    font-family: 'Montserrat', sans-serif;/*определяем нужный шрифт в макете сайта с помощью фотошова, нужные шрифты ищем здесь https://fonts.google.com, копируем link в head и font-family сюда*/
+    font-size: 1rem;/*1rem=16px*/
+    color: black;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+p {
+    margin: 0, 0, 1rem;
+}
+*,
+*:before,
+*:after{
+    box-sizing: border-box;/*этот алгоритм расчета ширины/высоты элемента используетчся везде*/
+}
+.container {/*создаем контейнер страницы и задаем его стили*/
+    width: 100%;
+    max-width: 1200px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin: 0 auto;
+}
+.header {
+    padding: 1.2rem 0;/*задали внутрение отступы померяв на макете*/
+    position: relative;
+}
+.header_inner {
+    display: flex;
+    justify-content: space-between;/*разделили место*/
+    align-items: center;/*выровняли по вертикали*/
+}
+.user {
+    display: flex;/*делаем див гибким (для переноса строк)*/
+}
+.user_avatar {
+    border-radius: 50%;/*округляем рисунок*/
+}
+.user_content {
+    padding-left: 9px;/*делаем отступ от дива-рисунка*/
+}
+.user_name {
+    font-size: 1rem;/*размер шрифта*/
+    color: var(--black);/*задаем цвет шрифта, подставив значение переменной*/
+    font-weight: bold;/*задем тип шрифта*/
+    margin-bottom: 3px;/*нижний отступ*/
+}
+.user_prof {
+    font-size: 0.75rem;
+    color: var(--black);
+    opacity: 0.7;/*задаем непрозрачность*/
+}
+.nav {
+    display: flex;
+    flex-wrap: wrap;/*чтоб ссылки переносились на следующую строчку*/
+    align-items: center;
+    height: 100%;
+}
+.nav_link {
+    margin-left: 2rem;/*задаем отступ между ссылками*/
+    position: relative;
+
+    font-size: 0.9rem;
+    color: var(--black);
+    font-weight: bold;
+    text-transform: uppercase;/*переводим текст в верхний регистр*/
+    text-decoration: none;/*убираем постоянное подчеркивание ссылок*/
+}
+.nav_link:hover {/*используем псевдокласс, чтобы при наводке подчеркивало ссылку*/
+    border-bottom: 2px solid black;/*создаем нижнее сплошное черное подчеркивание (границу)*/
+    padding: 0 0 4px;
+}
+.intro_inner {
+    display: flex;
+    padding-top: 6.6rem;
+    padding-bottom: 8rem;
+    position: relative;/*способ позиционирования элемента относительно окна браузера*/
+
+    border-bottom: 1px solid black;
+}
+.intro_subtitle {
+    color: var(--black);
+    font-weight: 200;
+    font-size: 2rem;
+}  
+.intro_title {
+    color: var(--black);
+    font-weight: bolt;
+    font-size: 3rem;
+    margin-bottom: 5px;
+}
+.intro_text {
+    color: var(--black);
+    opacity: 0.7;
+    font-size: 1.2rem;
+}
+.socials {
+    margin-top: 2rem;
+    margin-bottom: 2.5rem;
+    display: flex;
+}
+.social_link {
+    margin-right: 0.75rem;
+    text-decoration: none;/*убираем стандартное поведение ссылок*/
+}
+.social_link:hover {
+    transform: translateY(-5px);
+}/*с помощью псевдокласса при аведениее курсора иконка приподымается*/
+.btn {
+    display: inline-block;
+    vertical-align: top;
+    padding: 1rem 2rem;
+    width: 12.5rem;
+    
+    border: 1px solid black;
+    border-radius: 1.8rem;
+    background: none;
+    cursor: pointer;/*рука на кнопке при наведении курсора*/
+
+    font-size: 1rem;
+    color: var(--black);
+    opacity: 0.7;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+}
+.btn:hover {
+    background: black;
+    color: white;
+}/*при наведении курсора меняется цвет фона и текста*/
+.intro_photo {
+    position: absolute;
+    bottom: -1px;/*устанавливает положение нижнего края содержимого элемента*/
+    right: 0;/*фото впритык по правому краю*/
+    z-index: 1;/*слои (накладывания) элементов*/
+    margin-bottom: 1rem;
+}
+.text_center {
+    margin-top: 3.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 2.8rem;
+    color: var(--black);
+    font-weight: bold;
+}
+.works {
+    margin-bottom: 7rem;
+}
+.portfolio {
+    display: flex;
+    flex-wrap: wrap;/*чтоб объекты переносились на следующую строчку*/
+    justify-content: space-between;/*выравнивание по ширине*/
+}
+.work {
+    overflow: hidden;
+    box-shadow: 0 0 4x black;/*создали тень вокруг*/
+    border-radius: 10px;/*закруглили края рисунка*/
+    margin-bottom: 1rem;
+}
+.work:hover {/*при наведении на рисунок тень увеличется*/
+    box-shadow: 0 0 25px black;
+}
+.work_content {
+    padding: 1rem 0.8rem;
+}
+.work_cat {
+    font-size: 0.75rem;
+    color: var(--black);
+    text-transform: uppercase;/*большие буквы*/
+    margin-bottom: 0.4rem;
+}
+.work_title {
+    display: flex;
+    justify-content: space-between;/*выравнивание текста по ширине*/
+    font-size: 1rem;
+    color: var(--black);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.about_inner {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 7rem;
+}
+.about_photo {
+    max-width: 50%;
+    padding-left: 3,5rem;
+}
+.about_content {
+    max-width: 50%;
+    margin-top: 5rem;
+    padding-left: 7.5rem;
+}
+.about_title {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: var(--black);
+    text-transform: uppercase;
+}
+.about_bigtitle {
+    font-size: 5.2rem;
+    font-weight: bold;
+    color: var(--gray-light);
+    text-transform: uppercase;
+}
+.about_text {
+    margin-top: 2.5rem;
+    margin-bottom: 3.5rem;
+    font-size: 0.75rem;
+    font-weight: 300;
+    color: var(--gray-light);
+}
+.reviews {
+    background: #353333 url("images/reviews.png") center no-repeat;/*поместили изображение поверх бекграунда*/
+    padding: 3rem 0;/*отступ сверху-снизу, отступ слева-справа*/
+    position: relative;
+}
+.reviews_inner {
+    width: 100%;
+    max-width: 830px;
+    margin: 0 auto;
+}
+.reviews_text {
+    font-size: 0.9rem;
+    color: white;
+    text-align: center;
+}
+.reviews_author {
+    width: 100%;
+    margin-top: -51px;/*xчтоб залез наполовину на бекграунд*/
+    text-align: center;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+}
+.reviews_company {
+    margin-bottom: 0.3rem;
+    font-size: 1rem;
+    color: var(--black);
+    font-weight: bold;
+}
+.reviews_name {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--gray);
+    font-weight: 300;
+    font-style: italic;
+}
+.reviews_star_unactive {
+    opacity: 0.3;/*задаем непрозрачность*/
+}
+.reviews_rating {
+    margin-bottom: 6rem;
+}
+.courses {
+    margin-top: 14rem;
+    margin-bottom: 8rem;
+}
+.subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--grey);
+    font-weight: 300;
+}
+.margin {
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+.cources_inner {
+    margin-top: 3.5rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+.course {
+    width: 33.33%;
+    padding: 0 1rem;
+}
+.course_name {
+    margin-top: 1.3rem;
+    margin-bottom: 0.6rem;
+    font-size: 1.1rem;
+    color: var(--black);
+    font-weight: bold;
+}
+.course_cat {
+    margin-bottom: 1.5rem;
+    font-size: 0.75rem;
+    color: var(--gray);
+}
+.course_text {
+    font-size: 0.75rem;
+    color: var(--gray);
+    font-weight: 300;
+}
+.btn_edit {
+    margin-top: 1,5rem;
+    padding: 0.5rem 0.75rem;
+    width: 130px;
+    height: 34px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+.link {
+    margin-top: 1rem;
+    text-align: right;
+}
+.course_link {
+    font-size: 0.9rem;
+    color: var(--gray);
+}
+.footer {
+    padding: 1rem 0;
+    background-color: #2f2e30;/*пипеткой скопировали цвет*/
+}
+.footer_inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.footer_copyright {
+    font-size: 0.9rem;
+    color: #757476;
+    border-right: 1px solid #757476;
+    padding-right: 1rem;
+    margin-right: 1rem;
+}
+.footer_info {
+    display: flex;
+    align-items: center;
+}
+.footer_social {
+    display: flex;
+    align-items: center;
+}
+.footer_link {
+    margin-right: 1rem;
+    text-decoration: none;
+}
+.footer_nav {
+    display: flex;
+    align-items: center;
+}
+.footer_nav_link {
+    margin-left: 1rem;
+    font-size: 0.9rem;
+    color: var(--gray);
+    text-decoration: none;
+}
+
+.modal {
+    display: none;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    overflow: auto;/*управляет отображением содержания блочного элемента, если оно целиком не помещается*/
+    background-color: rgba(192, 192, 192, 0.9);/*цвет и прозрачность фона*/
+    position: fixed;
+    top: 0;/*определяет расстояние от верхнего края родительского элемента до верхнего края дочернего элемента*/
+    left: 0;
+    z-index: 1000;
+}
+.show {
+    display: flex;/*flex класса show перекрывает display:none класса modal*/
+}
+.modal_dialog {
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+    margin: auto;
+    position: relative;
+    background-color: white;
+    /*transform: scale(1); позволяет масштабировать, вращать, сдвигать, наклонять элемент*/
+}
+.modal_title {
+    font-size: 2rem;
+    color: black;
+    font-weight: bold;
+    padding: 3rem 0;
+}
+.modal_photo {
+    width: 100%;
+    height: 100%;
+}
+.btn_modal {
+    margin: 3rem 0;
+}
+
+@media(max-width: 1199px) {/*условие при котором срабатывает медиазапрос (верстка под планшет, если ширина меньше 1199,то рисунки переносятся ниже.)*/
+    .intro {
+        margin-top: -5rem;
+    }
+    .intro_photo {
+        width: 100%;
+        position: relative;
+    }
+    .intro_inner {
+        display: flex;
+        flex-wrap: wrap-reverse;/*нижние єлементы поодымаются вверх*/
+        padding: 5rem 0;
+    }
+    .work {
+        width: 98%;
+        margin: 1rem auto;
+        border-radius: 1.5rem;
+    }
+    .work_photo {
+        width: 100%;
+    }
+    .work_cat {
+        font-size: 1.2rem;
+    }
+    .work_title {
+        font-size: 1.5rem;
+    }
+    .about_photo {
+        width: 100%;
+        height: 100%;
+        padding-left: 1rem;
+    }
+    .about_content {
+        margin-top: 0rem;
+        padding: 0 2rem;
+    }
+    .about_bigtitle {
+        font-size: 2rem;/*меняем шрифт на меньший*/
+    }
+    .about_text {
+        font-size: 1rem;
+    }
+    .course {
+        width: 100%;
+        margin-bottom: 3rem;
+        padding: 0 1rem;
+    }
+    .course_photo {
+        width: 100%;
+    }
+    .course_name {
+        font-size: 2rem;
+    }
+    .course_cat {
+        font-size: 1rem;
+    }
+    .course_text {
+        font-size: 1rem;
+        margin-bottom: -1rem;
+    }
+    .course_link {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 767px) {/*условие верстки под планшет*/
+    .user {
+        display: none;/*скрываем блок*/
+    }
+    .nav {
+        display: flex;
+        justify-content: space-around;/*пустое пространство между ссылками и ссылкой/краем сайта*/
+        width: 100%;
+        border-bottom: 1px solid black;
+        padding-bottom: 1rem;
+    }
+    .nav_link {
+        margin: 0;/*убираем ранее созданные отступы*/
+    }
+    .intro_title {
+        font-size: 2.2rem;
+    }
+    .text_center {
+        margin: 1rem auto;
+    }
+    .works {
+        margin-bottom: 2rem;
+    }
+    .work_cat {
+        font-size: 0.7rem;
+    }
+    .work_title {
+        font-size: 0.9rem;
+    }
+    .about_inner {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .about_photo {
+        min-width: 100%;/*задаем минимальную ширину*/
+        margin: 0;
+        padding: 0;
+        height: 100%;
+    }
+    .about_content {
+        margin-top: 3rem;
+        width: 100%;
+        padding: 0 1rem;
+    }
+    .courses {
+        margin-bottom: 2rem;
+    }
+    .course_name {
+        font-size: 1rem;
+    }
+    .course_cat {
+        font-size: 0.8rem;
+    }
+    .footer_nav {
+        display: none;
+    }
+    .footer_copyright {
+        font-size: 0.8rem;
+    }
+}
+

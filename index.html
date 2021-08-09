@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><!--склет !таб-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--склет !таб-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,700;1,100&display=swap" rel="stylesheet"><!--подключаем недостающие шрифты отсюда https://fonts.google.com-->
+    <link rel="stylesheet" href="style.css"><!--подключаем файл со стилями-->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png"><!--https://realfavicongenerator.net/-->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png"><!--https://realfavicongenerator.net/-->
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png"><!--https://realfavicongenerator.net/-->
+    <link rel="manifest" href="site.webmanifest"><!--https://realfavicongenerator.net/-->
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5"><!--https://realfavicongenerator.net/-->
+    <meta name="msapplication-TileColor" content="#da532c"><!--https://realfavicongenerator.net/-->
+    <meta name="theme-color" content="#ffffff"><!--https://realfavicongenerator.net/-->
+    <title>Portfolio</title>><!--название проекта/вкладки-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script><!--подключаем библиотеку с сайта jquery-->
+    <script src="app.js"></script><!--подключаем файл с логикой-->
+</head>
+<body>
+    <header class="header"><!--создаем шапку сайта для логотипа и навигвции-->
+        <div class="container"><!--разместим элементы в контейнер-->
+            <div class="header_inner">
+                <div class="user">
+                    <img class="user_avatar" src="images/avatar_photo.png" alt=""><!--указываем путь файла предварительно экспортировав с макета нужный рисунок(при необходимости отменив маску)-->
+                    <div class="user_content">
+                        <div class="user_name">Sasha <br> Ferens</div><!--перенос строки-->
+                        <div class="user_prof">Full-Stack Web Developer</div>
+                    </div>
+                </div> 
+                <div class="nav" id="nav"><!--присваиваем ID блоку с сылками-->
+                    <a class="nav_link" href="#" data-scroll="#work">work</a><!--создаем ссылки для навигации по меню-->
+                    <a class="nav_link" href="#" data-scroll="#about">about me</a><!--с помощью дата-атрибута делаем скрол к якорю (блоку по id)-->
+                    <a class="nav_link" href="#" data-scroll="#courses">blog</a>
+                    <a class="nav_link" href="mailto:fsasha87@ukr.net">contact</a><!--при клике появится окно отправки сообщения-->
+                </div>   
+            </div>
+        </div>
+    </header>
+    <div class="intro">
+        <div class="container">
+            <div class="intro_inner">
+                <div class="intro_content">
+                    <h2 class="intro_subtitle">Hello I'am</h2>
+                    <h1 class="intro_title">Sasha Ferens</h1>
+                    <div class="intro_text">Full-Stack Web Developer</div>
+                    <div class="socials">
+                        <a class="social_link" href="https://www.udemy.com/course/web_developer/learn/lecture/18847712?start=1095#content">
+                            <img src="images/udemy.png" alt=""><!--создаем иконку-ссылку-->
+                        </a>
+                        <a class="social_link" href="https://www.youtube.com/channel/UCAtmCAPVLWrihKvsAovAP2A">
+                            <img src="images/youtube.png" alt="">
+                        </a>
+                        <a class="social_link" href="#">
+                            <img src="images/linkedin.png" alt="">
+                        </a>
+                        <a class="social_link" href="#">
+                            <img src="images/facebook.png" alt="">
+                        </a>
+                        <a class="social_link" href="#">
+                            <img src="images/instagram.png" alt="">
+                        </a>
+                        <a class="social_link" href="#">
+                            <img src="images/twitter.png" alt="">
+                        </a>
+                    </div>
+                    <button class="btn" type="button" data-modal="#modal_resume">SEE MY RESUME</button><!--создали кнопку и присвоим дата-атрибут с указанием ID блока модального окна (связали кнопку с окном)-->
+                </div>
+                <img class="intro_photo" src="images/photo.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="works" id="work">
+        <div class="container">
+            <h3 class="text_center">My Works</h3>
+            <div class="portfolio">
+                <div class="work">
+                    <img class="work_photo" src="images/work logo.png" alt="">
+                    <div class="work_content">
+                        <div class="work_cat">category: website</div>
+                        <div class="work_title">
+                            Online shop
+                            <div class="work_date">2020</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="work">
+                    <img class="work_photo" src="images/work logo.png" alt="">
+                    <div class="work_content">
+                        <div class="work_cat">category: website</div>
+                        <div class="work_title">
+                            Online shop
+                            <div class="work_date">2020</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="work_photo" class="work">
+                    <img class="work_photo" src="images/work logo.png" alt="">
+                    <div class="work_content">
+                        <div class="work_cat">category: website</div>
+                        <div class="work_title">
+                            Online shop
+                            <div class="work_date">2020</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="about" id="about"><!--назначаем ID для перехода сюда по навигации-->
+        <div class="container">
+            <div class="about_inner">
+                <img class="about_photo" src="images/designer_photo.png" alt="">
+                <div class="about_content">
+                    <h3 class="about_title">about me</h3>
+                    <h2 class="about_bigtitle">who am i</h2>
+                    <div class="about_text">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium commodi eligendi accusantium magni eos cum non voluptatibus aut iure cumque ea, quas necessitatibus aliquid explicabo, qui rem quidem est ab.</p>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium commodi eligendi accusantium magni eos cum non voluptatibus aut iure cumque ea, quas necessitatibus aliquid explicabo, qui rem quidem est ab.</p><!--shift+alt+стрелка вниз - повтор строки-->
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium commodi eligendi accusantium magni eos cum non voluptatibus aut iure cumque ea, quas necessitatibus aliquid explicabo, qui rem quidem est ab.</p><!--shift+alt+стрелка вниз - повтор строки-->
+                    </div>
+                    <button class="btn" type="button" data-modal="#modal_resume">see my resume</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="reviews">
+        <div class="container">
+            <div class="reviews_inner">
+                <div class="reviews_text">
+                    <p>Awesome teacher! Learned way more than I expected to or even thought I was going to. Would recommend the course to anyone looking to learn a front-end modern framework. Great experience!</p>
+                    <p>Great course! I have learned a lot from this course. Very well structured and much better than class room teaching. Very lear explanation with practical examples. In one sentence " Simply Amazing"!</p>
+                </div>
+                <div class="reviews_author">
+                    <img src="images/udemy_logo.png" alt="">
+                    <div class="reviews_company">Udemy</div>
+                    <div class="reviews_name">Students</div>
+                    <div class="reviews_rating">
+                        <img class="reviews_star" src="images/star.png" alt="">
+                        <img class="reviews_star" src="images/star.png" alt="">
+                        <img class="reviews_star" src="images/star.png" alt="">
+                        <img class="reviews_star" src="images/star.png" alt="">
+                        <img class="reviews_star_unactive" src="images/star.png" alt="">
+                    </div>
+                </div>
+                
+            </div>
+
+        </div>
+    </div>
+    <div class="courses" id="courses">
+        <div class="container">
+            <h3 class="text_center margin">My courses</h3><!--у заголовка два класса-->
+            <div class="subtitle">I am an instructor and teach students all over the world</div>
+            <div class="cources_inner">
+                <div class="course">
+                    <img class="course_photo" src="images/Angular logo.png" alt="">
+                    <div class="course_content">
+                        <h4 class="course_name">ANGULAR. PRACTICAL COURSE</h4>
+                        <div class="course_cat">WEB DEVELOPMENT</div>
+                        <div class="course_text">
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum exercitationem distinctio ea optio! Rem, in hic doloribus nihil quisquam esse vitae, sit, labore praesentium commodi ad tenetur nostrum ut unde!</p>
+                        </div>
+                    </div>
+                    <a href="https://www.udemy.com/course/web_developer/">
+                        <button class="btn btn_edit">SHOW MORE</button>
+                    </a>
+                </div>
+                <div class="course">
+                    <img class="course_photo" src="images/Angular logo.png" alt="">
+                    <div class="course_content">
+                        <h4 class="course_name">ANGULAR. PRACTICAL COURSE</h4>
+                        <div class="course_cat">WEB DEVELOPMENT</div>
+                        <div class="course_text">
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum exercitationem distinctio ea optio! Rem, in hic doloribus nihil quisquam esse vitae, sit, labore praesentium commodi ad tenetur nostrum ut unde!</p>
+                        </div>
+                    </div>
+                    <a href="https://www.udemy.com/course/web_developer/">
+                        <button class="btn btn_edit">SHOW MORE</button>
+                    </a>
+                </div>
+                <div class="course">
+                    <img class="course_photo" src="images/Angular logo.png" alt="">
+                    <div class="course_content">
+                        <h4 class="course_name">ANGULAR. PRACTICAL COURSE</h4>
+                        <div class="course_cat">WEB DEVELOPMENT</div>
+                        <div class="course_text">
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum exercitationem distinctio ea optio! Rem, in hic doloribus nihil quisquam esse vitae, sit, labore praesentium commodi ad tenetur nostrum ut unde!</p>
+                        </div>
+                    </div>
+                    <a href="https://www.udemy.com/course/web_developer/">
+                        <button class="btn btn_edit">SHOW MORE</button>
+                    </a>
+                </div>
+            </div>
+            <div class="link">
+                <a class="course_link" href="https://www.udemy.com/course/web_developer/">See more courses</a>
+            </div>
+         </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer_inner">
+                <div class="footer_info">
+                    <div class="footer_copyright">
+                        &copy; 2020 - Aleksandr Ferens <!--значек копирайт-->
+                    </div>
+                    <div class="footer_social">
+                        <a class="footer_link" href="#">
+                            <img src="images/linkedin_icon.png" alt="">
+                        </a>
+                        <a class="footer_link" href="https://www.facebook.com/">
+                            <img src="images/facebook_icon.png" alt="">
+                        </a>
+                        <a class="footer_link" href="#">
+                            <img src="images/instagram_icon.png" alt="">
+                        </a>
+                        <a class="footer_link" href="#">
+                            <img src="images/twitter_icon.png" alt="">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer_nav">
+                    <a class="footer_nav_link" href="#" data-scroll="#work">work</a><!--создаем ссылки для навигации по меню-->
+                    <a class="footer_nav_link" href="#" data-scroll="#about">about me</a>
+                    <a class="footer_nav_link" href="#" data-scroll="#courses">blog</a>
+                    <a class="footer_nav_link" href="mailto:fsasha87@ukr.net">contact</a>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <div class="modal" id="modal_resume"><!--создаем модальное окно, которое будет всплывать поверх страницы при клике на показать резюме-->
+        <div class="modal_dialog">
+            <h3 class="modal_title">RESUME</h3>
+            <img class="modal_photo" src="images/resume.jpg" alt="">
+            <a class="btn btn_edit btn_modal" href="images/resume.jpg" download>Download</a><!--ссылка позволит скачать картинку резюме-->
+        </div>
+    </div>
+   
+</body>
+</html>
